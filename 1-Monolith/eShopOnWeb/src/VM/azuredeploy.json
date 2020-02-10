@@ -10,7 +10,7 @@
             "defaultValue": "https://raw.githubusercontent.com/peterhack/eShopOnWeb/master/src/VM/"
         },
         "_artifactsLocationSasToken": {
-            "type": "securestring",
+            "type": "string",
             "metadata": {
                 "description": "The sasToken required to access _artifactsLocation. where required"
             },
@@ -109,7 +109,7 @@
             }
         },
         "dynatraceApiToken": {
-            "type": "securestring",
+            "type": "string",
             "metadata": {
                 "description": "Dynatrace API Token"
             }
