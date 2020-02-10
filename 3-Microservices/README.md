@@ -7,9 +7,9 @@
 https://www.dynatrace.com/support/help/shortlink/kubernetes-deploy#install-oneagent-operator
 
 > kubectl create namespace dynatrace\
-> LATEST_RELEASE=$(curl -s https://api.github.com/repos/dynatrace/dynatrace-oneagent-operator/releases/latest | grep tag_name | cut -d '"' -f 4)
-> kubectl create -f https://raw.githubusercontent.com/Dynatrace/dynatrace-oneagent-operator/$LATEST_RELEASE/deploy/kubernetes.yaml
-> kubectl -n dynatrace logs -f deployment/dynatrace-oneagent-operator
+> LATEST_RELEASE=$(curl -s https://api.github.com/repos/dynatrace/dynatrace-oneagent-operator/releases/latest | grep tag_name | cut -d '"' -f 4)\
+> kubectl create -f https://raw.githubusercontent.com/Dynatrace/dynatrace-oneagent-operator/$LATEST_RELEASE/deploy/kubernetes.yaml\
+> kubectl -n dynatrace logs -f deployment/dynatrace-oneagent-operator\
 >kubectl -n dynatrace create secret generic oneagent --from-literal="apiToken=[API_TOKEN](https://www.dynatrace.com/support/help/reference/dynatrace-concepts/what-is-an-access-token/)" --from-literal="paasToken=[PAAS_TOKEN](https://www.dynatrace.com/support/help/technology-support/cloud-platforms/kubernetes/installation-and-operation/full-stack/deploy-oneagent-on-kubernetes/#expand-1380how-to-get-your-paas-token)"
 ### Deploy the eShopOnContainers App
 - clone [eShopOnContainers](https://github.com/peterhack/eShopOnContainers) to Azure CLI dir
