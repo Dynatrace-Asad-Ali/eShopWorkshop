@@ -1,0 +1,31 @@
+#cloud-config
+package_upgrade: true
+packages:
+- docker.io
+- python-pip
+runcmd:
+# Base host configurations
+- service docker start
+- usermod -aG docker eshopadmin
+- pip install docker-compose
+# Bringing eShopOnWeb local to eshopadmin with correct permissions
+- git clone https://github.com/peterhack/eShopOnWeb.git /home/eshopadmin/eShopOnWeb
+- chown -R eshopadmin:eshopadmin /home/eshopadmin/eShopOnWeb
+# Deploying local MSSQL Express eShopOnWeb DB for visibility.  This requires
+# installation of dotnet-sdk to apply DB context and content for Demo
+- docker run --name localdb -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=eSh0pdb!' -e 'MSSQL_PID=Express' -e DT_TAGS="eShopOnWeb" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+- docker network create eshoponweb_default
+- docker network connect eshoponweb_default localdb
+- wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb 
+- sudo dpkg -i packages-microsoft-prod.deb
+- sudo add-apt-repository universe
+- sudo apt-get update
+- sudo apt-get install apt-transport-https -y
+- sudo apt-get update
+- sudo apt-get install dotnet-sdk-3.1 -y
+# Configuring database context
+- runuser -l eshopadmin -c '/home/eshopadmin/eShopOnWeb/src/VM/db-restore.sh'
+# Starting eShopOnWeb Monolith
+- runuser -l eshopadmin -c '/home/eshopadmin/eShopOnWeb/src/VM/start-eShopOnWeb.sh'
+# Start eShopOnWeb Frontend
+- runuser -l eshopadmin -c '/home/eshopadmin/eShopOnWeb/src/VM/start-frontend.sh'

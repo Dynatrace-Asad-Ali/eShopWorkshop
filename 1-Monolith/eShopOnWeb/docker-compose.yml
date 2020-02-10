@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  eshopwebmvc:
+    image: ${DOCKER_REGISTRY-}eshopwebmvc
+    build:
+      context: .
+      dockerfile: src/Web/Dockerfile
+    environment:
+    - DT_TAGS="eShopOnWeb"
+

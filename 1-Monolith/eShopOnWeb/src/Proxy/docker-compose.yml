@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  frontend:
+    image: ${DOCKER_REGISTRY-}frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - "80:80"
+    environment:
+    - DT_TAGS="eShopOnWeb"
+networks:
+  default:
+    external:
+      name: eshoponweb_default
