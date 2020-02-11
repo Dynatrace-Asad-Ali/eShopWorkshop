@@ -26,6 +26,11 @@ https://www.dynatrace.com/support/help/shortlink/kubernetes-deploy#install-oneag
 
 ```kubectl -n dynatrace create secret generic oneagent --from-literal="apiToken=[API_TOKEN] --from-literal="paasToken=[PAAS_TOKEN]```
 
+```curl -o cr.yaml https://raw.githubusercontent.com/Dynatrace/dynatrace-oneagent-operator/$LATEST_RELEASE/deploy/cr.yaml```
+
+Edit cr.yaml file and update apiUrl to the environment id.
+
+```kubectl apply -f cr.yaml```
 
 ### Deploy the eShopOnContainers App
 - clone [eShopOnContainers](https://github.com/peterhack/eShopOnContainers) to Azure CLI dir
