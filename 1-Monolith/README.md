@@ -4,8 +4,9 @@ For deployment is uses Microsoft Azure ARM template. The arm template not only c
 
 To install the application, go to https://portal.azure.com and login with your credentials. Once logged in, open a cloud shell in Azure.
 
-![Image of Azure Cloud Shell-1]
-(../images/AzureCloudShell1.png)
+![Image of Azure Cloud Shell-1](../images/AzureCloudShell1.png)
+
+
 Before you run the ARM template, create a resource group in Microsoft Azure using the following command:\
 ```az group create --name eshopworkshop --location eastus```
 Using the ARM template to deploy eShopOnWeb Monolithic .NET application with Dynatrace Extension applied
