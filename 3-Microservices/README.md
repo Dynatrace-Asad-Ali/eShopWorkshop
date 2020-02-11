@@ -1,16 +1,28 @@
-## Step 3 -  Deploying Microservices based eshop
-### creating an AKS deployment
-> az group create --name eshopworkshop --location eastus
 
-> az aks create --resource-group eshopworkshop --name eshopaks --node-count 3 --enable-addons monitoring,http_application_routing --generate-ssh-keys
+### Architecture overview
+
+This reference application is cross-platform at the server and client side, thanks to .NET Core services capable of running on Linux or Windows containers depending on your Docker host, and to Xamarin for mobile apps running on Android, iOS or Windows/UWP plus any browser for the client web apps.
+The architecture proposes a microservice oriented architecture implementation with multiple autonomous microservices (each one owning its own data/db) and implementing different approaches within each microservice (simple CRUD vs. DDD/CQRS patterns) using Http as the communication protocol between the client apps and the microservices and supports asynchronous communication for data updates propagation across multiple services based on Integration Events and an Event Bus (a light message broker, to choose between RabbitMQ or Azure Service Bus, underneath)
+
+![eShopOnContainersArchitecture](../images/eShopOnContainers-architecture.png)
+
+
+### Deploy the eShop on AKS
+
+Create an AKS cluster with 3 nodes.
+
+```az aks create --resource-group eshopworkshop --name eshopaks --node-count 3 --enable-addons monitoring,http_application_routing --generate-ssh-keys```
+
 ### Deploy the OneAgent Operator in AKS
 https://www.dynatrace.com/support/help/shortlink/kubernetes-deploy#install-oneagent-operator
 
-> kubectl create namespace dynatrace\
-> LATEST_RELEASE=$(curl -s https://api.github.com/repos/dynatrace/dynatrace-oneagent-operator/releases/latest | grep tag_name | cut -d '"' -f 4)\
-> kubectl create -f https://raw.githubusercontent.com/Dynatrace/dynatrace-oneagent-operator/$LATEST_RELEASE/deploy/kubernetes.yaml\
-> kubectl -n dynatrace logs -f deployment/dynatrace-oneagent-operator\
->kubectl -n dynatrace create secret generic oneagent --from-literal="apiToken=[API_TOKEN](https://www.dynatrace.com/support/help/reference/dynatrace-concepts/what-is-an-access-token/)" --from-literal="paasToken=[PAAS_TOKEN](https://www.dynatrace.com/support/help/technology-support/cloud-platforms/kubernetes/installation-and-operation/full-stack/deploy-oneagent-on-kubernetes/#expand-1380how-to-get-your-paas-token)"
+```kubectl create namespace dynatrace```\
+```LATEST_RELEASE=$(curl -s https://api.github.com/repos/dynatrace/dynatrace-oneagent-operator/releases/latest | grep tag_name | cut -d '"' -f 4)```\
+```kubectl create -f https://raw.githubusercontent.com/Dynatrace/dynatrace-oneagent-operator/$LATEST_RELEASE/deploy/kubernetes.yaml```\
+```kubectl -n dynatrace logs -f deployment/dynatrace-oneagent-operator```\
+```kubectl -n dynatrace create secret generic oneagent --from-literal="apiToken=[API_TOKEN](https://www.dynatrace.com/support/help/reference/dynatrace-concepts/what-is-an-access-token/)" --from-literal="paasToken=[PAAS_TOKEN](https://www.dynatrace.com/support/help/technology-support/cloud-platforms/kubernetes/installation-and-operation/full-stack/deploy-oneagent-on-kubernetes/#expand-1380how-to-get-your-paas-token)"```
+
+
 ### Deploy the eShopOnContainers App
 - clone [eShopOnContainers](https://github.com/peterhack/eShopOnContainers) to Azure CLI dir
 
