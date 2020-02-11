@@ -55,10 +55,16 @@ Last line of the cloud-init-output.log should look like:
 ### Review eShopOnWeb App
 Confirm eShopOnWeb is running
 
-```docker ps ```
+```sudo docker ps ```
 
--  open browser and navigate to: 
-    > https://[vm-ip-address]:5106
+![Docker Output](../images/Docker.png)
+
+Open a browser on your local machine and go to:\
+http://[vm-ip-address]
+
+![eShopOnWeb](../images/EShopOnWeb.png) 
+
+
 
 ### Reviewing eShopOnWeb App in Dynatrace
 Navigate around Dynatrace to review app
