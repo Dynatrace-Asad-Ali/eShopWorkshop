@@ -65,20 +65,11 @@ http://[vm-ip-address]
 ![eShopOnWeb](../images/EShopOnWeb.png) 
 
 
-
 ### Reviewing eShopOnWeb App in Dynatrace
 Navigate around Dynatrace to review app
 
-### Add front-end to eShopOnWeb App (deployed by default)
-add nginx front end
-  > cd /home/eshopadmin/eShopOnWeb/src/VM/
-  >
-  >  ./start-frontend.sh
-
-review eShop at http://[vm-ip-address]
 
 ### Review eShopOnWeb App in Dynatrace to see RUM
 - Navigate the application and complete some transactions including logging in and checkout
-- Credentials for the demo app: demouser@microsoft.com/ 
 - In Dynatrace go to Applications -> See the data collected for the frontend actions 
 - Go to User Sessions -> Find out your session and see the replay
