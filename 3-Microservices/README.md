@@ -35,9 +35,10 @@ Edit **cr.yaml** file and update **ENVIRONMENTID** with the environment id in th
 
 ```kubectl apply -f cr.yaml```
 
-```cd ~/eShopWorkshop/3-Microservices/eShopOnContainers/deploy/k8s/helm/```
-
 ### Deploy the eShopOnContainers App
+
+
+```cd ~/eShopWorkshop/3-Microservices/eShopOnContainers/deploy/k8s/helm/```
 
 ```kubectl create namespace eshop```
 
