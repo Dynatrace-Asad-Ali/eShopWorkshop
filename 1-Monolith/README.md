@@ -5,6 +5,7 @@ For deployment is uses Microsoft Azure ARM template. The arm template not only c
 To install the application, go to https://portal.azure.com and login with your credentials. Once logged in, open a cloud shell in Azure.
 
 ![Image of Azure Cloud Shell-1](../images/AzureCloudShell1.png)
+
 ![Image of Azure Cloud Shell-2](../images/AzureCloudShell2.png)
 
 Clone this repository
@@ -17,6 +18,17 @@ Clone this repository
 Run the following command in Cloud Shell to create a resource group that will be used by the ARM template. Please keep the name of the group as shown in the command below:\
 ```az group create --name eshopworkshop --location eastus```
 
+Log into your Dynatrace tenant and create **API Token** and **PaaS Token** and note down the environment Id:\
+1. API Token: Settings -> Integration -> Dynatrace API\
+![API Token](../images/ApiToken.png)
+
+2. Paas Token: Deploy Dynatrace -> Set up Paas Integration -> Create New Token\
+![Paas Token 1](../images/PaasToken1.png)
+
+![Paas Token 2](../images/PaasToken2.png)
+
+3. Environment ID:
+![Environment Id](../images/EnvironmentID.png)
 
 Then run the following command to execute the ARM template. This ARM template is going to 
 Using the ARM template to deploy eShopOnWeb Monolithic .NET application with Dynatrace Extension applied
