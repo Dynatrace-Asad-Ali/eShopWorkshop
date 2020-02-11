@@ -5,10 +5,20 @@ For deployment is uses Microsoft Azure ARM template. The arm template not only c
 To install the application, go to https://portal.azure.com and login with your credentials. Once logged in, open a cloud shell in Azure.
 
 ![Image of Azure Cloud Shell-1](../images/AzureCloudShell1.png)
+![Image of Azure Cloud Shell-2](../images/AzureCloudShell2.png)
+
+Clone this repository
+
+```git clone https://github.com/Dynatrace-Asad-Ali/eShopWorkshop.git```
+
+```cd eShopWorkshop/1-Monolith/```
 
 
-Before you run the ARM template, create a resource group in Microsoft Azure using the following command:\
+Run the following command in Cloud Shell to create a resource group that will be used by the ARM template. Please keep the name of the group as shown in the command below:\
 ```az group create --name eshopworkshop --location eastus```
+
+
+Then run the following command to execute the ARM template. This ARM template is going to 
 Using the ARM template to deploy eShopOnWeb Monolithic .NET application with Dynatrace Extension applied
 - this template will request a password for the eshopadmin user and the MSSQL DB admin
   - the DB Admin user will require 8 alpha chars, 1+ number, 1+ special chars.
