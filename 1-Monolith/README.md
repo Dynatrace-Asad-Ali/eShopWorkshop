@@ -18,34 +18,37 @@ Clone this repository
 Run the following command in Cloud Shell to create a resource group that will be used by the ARM template. Please keep the name of the group as shown in the command below:\
 ```az group create --name eshopworkshop --location eastus```
 
-Log into your Dynatrace tenant and create **API Token** and **PaaS Token** and note down the environment Id:\
-1. API Token: Settings -> Integration -> Dynatrace API\
+Log into your Dynatrace tenant and create **API Token** and **PaaS Token** and note down the **Environment Id**:\
+1. API Token: Settings -> Integration -> Dynatrace API
+
 ![API Token](../images/ApiToken.png)
 
-2. Paas Token: Deploy Dynatrace -> Set up Paas Integration -> Create New Token\
+2. Paas Token: Deploy Dynatrace -> Set up Paas Integration -> Create New Token
+
 ![Paas Token 1](../images/PaasToken1.png)
 
 ![Paas Token 2](../images/PaasToken2.png)
 
-3. Environment ID:
+3. Environment Id:
+
 ![Environment Id](../images/EnvironmentID.png)
 
-Then run the following command to execute the ARM template. This ARM template is going to 
-Using the ARM template to deploy eShopOnWeb Monolithic .NET application with Dynatrace Extension applied
-- this template will request a password for the eshopadmin user and the MSSQL DB admin
-  - the DB Admin user will require 8 alpha chars, 1+ number, 1+ special chars.
-- this ARM template will request your Dynatrace tenant URL, API token, & PaaS token
-- in Bash CLI:
-    > cd eShopOnWeb
-    >
-    > az group deployment create --name "eshopvm" --resource-group "eshopworkshop" --template-file "./src/VM/azuredeploy.json"
+
+Then run the following command to execute the ARM template. This ARM template is going to request a password for MSSQL DB admin (which will the same for ssh password), tenant id (Environment Id), API Token and Paas Token.
+```cd eShopOnWeb```
+```az group deployment create --name "eshopvm" --resource-group "eshopworkshop" --template-file "./src/VM/azuredeploy.json"```
 
 This takes ~15 mins to complete
 
--  SSH to VM using eshopadmin@[vm-ip-address]
-  > tail /var/log/cloud-init-output.log 
-- last line should be
-  > "Cloud-init v. 19.3-41-gc4735dd3-0ubuntu1~18.04.1 finished..."
+After the VM instance is created, ssh into the VM instance from the **cloud shell** and ensure that the ARM template has completed successfully.
+
+```ssh eshopadmin@[vm-ip-address]```
+```tail /var/log/cloud-init-output.log ```
+
+Last line of the cloud-init-output.log should look like:
+
+
+"Cloud-init v. 19.3-41-gc4735dd3-0ubuntu1~18.04.1 finished..."
 
 ### Reviewing eShopOnWeb App
 - confirm eShopOnWeb is running
