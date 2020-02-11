@@ -28,24 +28,24 @@ https://www.dynatrace.com/support/help/shortlink/kubernetes-deploy#install-oneag
 
 ```curl -o cr.yaml https://raw.githubusercontent.com/Dynatrace/dynatrace-oneagent-operator/$LATEST_RELEASE/deploy/cr.yaml```
 
-Edit cr.yaml file and update apiUrl to the environment id.
+Edit cr.yaml file and update **apiUrl** to the environment id.
 
 ```kubectl apply -f cr.yaml```
 
+```cd ~/eShopWorkshop/3-Microservices/eShopOnContainers/deploy/k8s/helm/```
+
 ### Deploy the eShopOnContainers App
-- clone [eShopOnContainers](https://github.com/peterhack/eShopOnContainers) to Azure CLI dir
 
-> cd ./eShopOnContainers/deploy/k8s/helm/
->
-> kubectl create namespace eshop
->
-> ./deploy-all.sh --aks-name eshopaks --aks-rg eshopworkshop --tag dev --dns aks --namespace eshop
->
-> kubectl apply -f aks-httpaddon-cfg.yaml
->
-> kubectl delete pod $(kubectl get pod -l app=addon-http-application-routing-nginx-ingress -n kube-system -o jsonpath="{.items[0].metadata.name}") -n kube-system
+```kubectl create namespace eshop```
 
-you can get the DNS name of your aks cluster with the following:
-> kubectl get ing -n eshop
+```./deploy-all.sh --aks-name eshopaks --aks-rg eshopworkshop --tag dev --dns aks --namespace eshop```
+
+```kubectl apply -f aks-httpaddon-cfg.yaml```
+
+```kubectl delete pod $(kubectl get pod -l app=addon-http-application-routing-nginx-ingress -n kube-system -o jsonpath="{.items[0].metadata.name}") -n kube-system```
+
+
+Get the DNS name of your aks cluster with the following:\
+```kubectl get ing -n eshop```
 
  You can view the MVC client at http://[dns]/webmvc
