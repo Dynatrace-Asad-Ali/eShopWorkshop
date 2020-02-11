@@ -43,7 +43,7 @@ This takes ~15 mins to complete
 
 After the VM instance is created, ssh into the VM instance from the **cloud shell** and ensure that the ARM template has completed successfully.
 
-```ssh eshopadmin@[vm-ip-address]```
+```ssh eshopadmin@[vm-ip-address]```\
 ```tail /var/log/cloud-init-output.log ```
 
 Last line of the cloud-init-output.log should look like:
@@ -52,7 +52,7 @@ Last line of the cloud-init-output.log should look like:
 "Cloud-init v. 19.3-41-gc4735dd3-0ubuntu1~18.04.1 finished..."
 
 
-### Reviewing eShopOnWeb App
+### Review eShopOnWeb App
 Confirm eShopOnWeb is running
 
 ```docker ps ```
