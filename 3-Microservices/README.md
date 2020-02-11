@@ -12,6 +12,8 @@ The architecture proposes a microservice oriented architecture implementation wi
 Create an AKS cluster with 3 nodes.
 
 ```az aks create --resource-group eshopworkshop --name eshopaks --node-count 3 --enable-addons monitoring,http_application_routing --generate-ssh-keys```
+```az aks get-credentials --resource-group myResourceGroup --name eshopaks```
+
 
 ### Deploy the OneAgent Operator in AKS
 https://www.dynatrace.com/support/help/shortlink/kubernetes-deploy#install-oneagent-operator
