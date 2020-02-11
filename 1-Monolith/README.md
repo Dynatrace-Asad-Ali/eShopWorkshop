@@ -1,6 +1,6 @@
 ### Deploying the Monolith application
-This monolith application uses .net core and provides eShop functionality.
-For deployment is uses Microsoft Azure ARM template. The arm template not only creates a VM instance in Azure but also deploys Dynatrace OneAgent on the VM instance.
+This monolith application uses .net core and provides eShop functionality.\
+For deployment is uses Microsoft Azure ARM template. The arm template not only creates a VM instance in Azure but also deploys Dynatrace OneAgent on the VM instance.\
 
 Before you run the ARM template, create a resource group in Microsoft Azure using the following command:
 ```az group create --name eshopworkshop --location eastus```
