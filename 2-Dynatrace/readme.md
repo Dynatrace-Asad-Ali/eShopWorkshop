@@ -17,7 +17,7 @@ Add the following custom service detection rules in Dynatrace
 |Microsoft.eShopWeb.ApplicationCore.Interfaces.IBasketService| GetBasketItemCountAsync|
 |Microsoft.eShopWeb.Web.Services.ICatalogViewModelService.   | GetCatalogItems.       |
 
-![CustomService-2][1](../images/CustomService-2.png)
+[![CustomService-2][1]](../images/CustomService-2.png)
 ![CustomService-3][1](../images/CustomService-3.png)
 
 ![CustomService-4][1](../images/CustomService-4.png)
