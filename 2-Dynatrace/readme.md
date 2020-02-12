@@ -31,9 +31,18 @@ Add the following custom service detection rules in Dynatrace
 ![CustomService-8](../images/CustomService-8.png)
 
 
-2. Restart the docker container
+2. Restart the docker container for **eshopwebmvc**
+
 ```docker ps```
 
 ![DockerPS](../images/DockerPs.png)
 
 ```docker restart <container id>```
+
+
+3. Run transaction on the web application
+
+4. Review data in Dynatrace
+
+![ServiceFlow-1](../images/ServiceFlow.png)
+
