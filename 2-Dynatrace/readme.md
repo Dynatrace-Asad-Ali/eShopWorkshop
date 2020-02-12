@@ -7,7 +7,7 @@ Dynatrace allows you to create custom services that not only allows you to see t
 
 Log into the Dynatrace tenant. Go to Settings->Server-side service monitoring->Custom service detection
 
-![CustomService-1](../images/CustomService-1.png)
+![CustomService-1][1](../images/CustomService-1.png)
 
 Add the following custom service detection rules in Dynatrace
 
@@ -18,16 +18,16 @@ Add the following custom service detection rules in Dynatrace
 |Microsoft.eShopWeb.Web.Services.ICatalogViewModelService.   | GetCatalogItems.       |
 
 ![CustomService-2][1](../images/CustomService-2.png)
-![CustomService-3](../images/CustomService-3.png)
+![CustomService-3][1](../images/CustomService-3.png)
 
-![CustomService-4](../images/CustomService-4.png)
+![CustomService-4][1](../images/CustomService-4.png)
 
-![CustomService-5](../images/CustomService-5.png)
+![CustomService-5][1](../images/CustomService-5.png)
 
-![CustomService-6](../images/CustomService-6.png)
+![CustomService-6][1](../images/CustomService-6.png)
 
-![CustomService-7](../images/CustomService-7.png)
+![CustomService-7][1](../images/CustomService-7.png)
 
-![CustomService-8](../images/CustomService-8.png)
+![CustomService-8][1](../images/CustomService-8.png)
 
 
