@@ -11,12 +11,8 @@ The exercises in this workshop are making use of the existing Microsoft demo app
 
 ## Hands-On
 The steps for this workshop is divided into 3 steps:\
-1. [1-Monolith](1-Monolith)
-2. [2-Dynatrace](2-Dynatrace)
-3. [3-Microservices](3-Microservices)
+[1-Monolith](1-Monolith)
+[2-Dynatrace](2-Dynatrace)
+[3-Microservices](3-Microservices)
 
-- Configure Dynatrace Tenant to instrument containers: Settings -> Processes and containers -> Container monitoring -> Turn on the following sliders
-  - containerd
-  - cri-o
-  - docker
-
+Follow the above steps in order to complete the workshop.
