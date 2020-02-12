@@ -9,11 +9,26 @@ Log into the Dynatrace tenant. Go to Settings->Server-side service monitoring->C
 
 ![CustomService-1](../images/CustomService-1.png)
 
-Add the followin custom service detection rules in Dynatrace
+Add the following custom service detection rules in Dynatrace
 
 |Class Name                                                  | Method Name            |
 |------------------------------------------------------------|------------------------|
 |Microsoft.eShopWeb.ApplicationCore.Interfaces.IOrderService | CreateOrderAsync       |
 |Microsoft.eShopWeb.ApplicationCore.Interfaces.IBasketService| GetBasketItemCountAsync|
 |Microsoft.eShopWeb.Web.Services.ICatalogViewModelService.   | GetCatalogItems.       |
+
+![CustomService-2](../images/CustomService-2.png)
+
+![CustomService-3](../images/CustomService-3.png)
+
+![CustomService-4](../images/CustomService-4.png)
+
+![CustomService-5](../images/CustomService-5.png)
+
+![CustomService-6](../images/CustomService-6.png)
+
+![CustomService-7](../images/CustomService-7.png)
+
+![CustomService-8](../images/CustomService-8.png)
+
 
