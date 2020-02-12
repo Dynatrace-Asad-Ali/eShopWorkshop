@@ -6,8 +6,11 @@ The exercises in this workshop are making use of the existing Microsoft demo app
 
 ## Pre-Requisites
 1.Azure account with ability to create and manage virtual machines (VMs) as well as a 3-node Azure Kubernetes Cluster (AKS)
+
 2.Ability to run Azure Resource Manager (ARM) templates from within the Azure CLI
+
 3.Dynatrace account. You can start a trial [here](https://www.dynatrace.com/trial/)
+
 
 ## Hands-On
 The steps for this workshop is divided into 3 steps:\
