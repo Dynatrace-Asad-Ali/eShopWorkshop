@@ -17,7 +17,7 @@ Add the following custom service detection rules in Dynatrace
 |Microsoft.eShopWeb.ApplicationCore.Interfaces.IBasketService| GetBasketItemCountAsync|
 |Microsoft.eShopWeb.Web.Services.ICatalogViewModelService.   | GetCatalogItems.       |
 
-![CustomService-2][1](../images/CustomService-2.png)
+![CustomService-2](../images/CustomService-2.png)
 ![CustomService-3](../images/CustomService-3.png)
 
 ![CustomService-4](../images/CustomService-4.png)
@@ -31,3 +31,9 @@ Add the following custom service detection rules in Dynatrace
 ![CustomService-8](../images/CustomService-8.png)
 
 
+2. Restart the docker container
+```docker ps```
+
+![DockerPS](../images/DockerPs.png)
+
+```docker restart <container id>```
