@@ -15,7 +15,9 @@ The exercises in this workshop are making use of the existing Microsoft demo app
 ## Hands-On
 The steps for this workshop is divided into 3 steps:\
 [1-Monolith](1-Monolith)
+
 [2-Dynatrace](2-Dynatrace)
+
 [3-Microservices](3-Microservices)
 
 Follow the above steps in order to complete the workshop.
