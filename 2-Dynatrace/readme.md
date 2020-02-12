@@ -44,5 +44,5 @@ Add the following custom service detection rules in Dynatrace
 
 4. Review data in Dynatrace
 
-![ServiceFlow-1](../images/ServiceFlow.png)
+![ServiceFlow-1](../images/ServiceFlow-1.png)
 
