@@ -11,8 +11,9 @@ Log into the Dynatrace tenant. Go to Settings->Server-side service monitoring->C
 
 Add the followin custom service detection rules in Dynatrace
 
-Class Name                                                  | Method Name
-_____________________________________|________________________________________________
-Microsoft.eShopWeb.ApplicationCore.Interfaces.IOrderService | CreateOrderAsync 
-Microsoft.eShopWeb.ApplicationCore.Interfaces.IBasketService| GetBasketItemCountAsync
-Microsoft.eShopWeb.Web.Services.ICatalogViewModelService.   | GetCatalogItems
+|Class Name                                                  | Method Name            |
+|_____________________________________|_______________________________________________|
+|Microsoft.eShopWeb.ApplicationCore.Interfaces.IOrderService | CreateOrderAsync       |
+|Microsoft.eShopWeb.ApplicationCore.Interfaces.IBasketService| GetBasketItemCountAsync|
+|Microsoft.eShopWeb.Web.Services.ICatalogViewModelService.   | GetCatalogItems.       |
+
