@@ -34,7 +34,8 @@ Log into your Dynatrace tenant and create **API Token** and **PaaS Token** and n
 ![Environment Id](../images/EnvironmentID.png)
 
 
-Then run the following command to execute the ARM template. This ARM template is going to request a password for MSSQL DB admin (which will the same for ssh password), tenant id (Environment Id), API Token and Paas Token.
+Then run the following command to execute the ARM template. This ARM template is going to request a password for MSSQL DB admin (which will the same for ssh password). The password must be more that 6 characters and have at least 3 of the following: lowercase, uppercase, numeric, special character.\
+It will also ask for tenant id (Environment Id), API Token and Paas Token. 
 
 ```cd eShopOnWeb```\
 ```az group deployment create --name "eshopvm" --resource-group "eshopworkshop" --template-file "./src/VM/azuredeploy.json"```
@@ -44,7 +45,7 @@ This takes ~15 mins to complete
 After the VM instance is created, ssh into the VM instance from the **cloud shell** and ensure that the ARM template has completed successfully.
 
 ```ssh eshopadmin@[vm-ip-address]```\
-```tail /var/log/cloud-init-output.log ```
+```tail -f /var/log/cloud-init-output.log ```
 
 Last line of the cloud-init-output.log should look like:
 
