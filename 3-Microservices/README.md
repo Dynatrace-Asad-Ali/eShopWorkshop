@@ -21,19 +21,18 @@ https://www.dynatrace.com/support/help/shortlink/kubernetes-deploy#install-oneag
 
 ```kubectl create namespace dynatrace```
 
-```LATEST_RELEASE=$(curl -s https://api.github.com/repos/dynatrace/dynatrace-oneagent-operator/releases/latest | grep tag_name | cut -d '"' -f 4)```
+```./get-dt-config.sh```
+
+```./config_cr.sh```
 
 ```kubectl create -f https://raw.githubusercontent.com/Dynatrace/dynatrace-oneagent-operator/$LATEST_RELEASE/deploy/kubernetes.yaml```
 
 ```kubectl get po -n dynatrace```
 
-```kubectl -n dynatrace create secret generic oneagent --from-literal="apiToken=[API_TOKEN]" --from-literal="paasToken=[PAAS_TOKEN]"```
-
-```curl -o cr.yaml https://raw.githubusercontent.com/Dynatrace/dynatrace-oneagent-operator/$LATEST_RELEASE/deploy/cr.yaml```
-
-Edit **cr.yaml** file and update **ENVIRONMENTID** with the environment id in the **apiUrl** section.
+```./create_secret.sh```
 
 ```kubectl apply -f cr.yaml```
+
 ```kubectl get po -n dynatrace```
 
 
