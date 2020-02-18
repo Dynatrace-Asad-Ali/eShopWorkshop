@@ -14,5 +14,5 @@ while true; do
     echo "Please try again"
 done
 
-echo $password
-
+az keyvault create --name "eshop-vault" --resource-group "eshopworkshop" --location eastus
+az keyvault secret set --vault-name "eshop-vault" --name "vmpassword" --value $password
