@@ -14,5 +14,5 @@ while true; do
     echo "Please try again"
 done
 
-echo password
+echo $password
 
