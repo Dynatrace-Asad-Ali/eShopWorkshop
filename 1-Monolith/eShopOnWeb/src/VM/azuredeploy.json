@@ -172,6 +172,28 @@
                 }
             }
         },
+          {
+             "comments": "### RESOURCE - LOGIC APP ###",
+              "apiVersion": "[variables('linked').apiVersion]",
+               "type": "Microsoft.Resources/deployments",
+               "name": "[variables('deployments').logicApp]",
+              "properties": {
+                "mode": "Incremental",
+               "templateLink": {
+                 "uri": "https://raw.githubusercontent.com/devkimchi/Handling-Secrets-around-ARM-Templates/master/LogicApp.json"
+                  },
+                  "parameters": {
+                    "keyVaultSecretValue": {
+                     "reference": {
+                       "keyVault": {
+                         "id": "[resourceId('Microsoft.KeyVault/vaults', variables('keyVault').name)]"
+                      },
+                      "secretName": "[variables('keyVault').secrets.name]"
+                     }
+                     }
+                 }
+             }
+        },
         {
             "type": "Microsoft.Network/networkSecurityGroups",
             "apiVersion": "2019-02-01",
