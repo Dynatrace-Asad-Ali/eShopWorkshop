@@ -23,7 +23,7 @@ https://www.dynatrace.com/support/help/shortlink/kubernetes-deploy#install-oneag
 
 ```./get-dt-config.sh```
 
-```./config_cr.sh```
+```. ./config_cr.sh```
 
 ```kubectl create -f https://raw.githubusercontent.com/Dynatrace/dynatrace-oneagent-operator/$LATEST_RELEASE/deploy/kubernetes.yaml```
 
