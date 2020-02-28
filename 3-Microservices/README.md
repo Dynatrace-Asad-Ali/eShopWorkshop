@@ -29,7 +29,7 @@ https://www.dynatrace.com/support/help/shortlink/kubernetes-deploy#install-oneag
 
 ```kubectl get po -n dynatrace```
 
-```./create_secret.sh```
+```./create_secrets.sh```
 
 ```kubectl apply -f cr.yaml```
 
