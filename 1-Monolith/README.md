@@ -16,7 +16,6 @@ Clone this repository
 
 
 Run the following command in Cloud Shell to create a resource group that will be used by the ARM template. Please keep the name of the group as shown in the command below:\
-```az group create --name eshopworkshop --location eastus```
 
 Log into your Dynatrace tenant and create **API Token** and **PaaS Token** and note down the **Environment Id**:\
 1. API Token: Settings -> Integration -> Dynatrace API
@@ -38,7 +37,7 @@ Then run the following command to execute the ARM template. This ARM template is
 It will also ask for tenant id (Environment Id), API Token and Paas Token. 
 
 ```cd eShopOnWeb```\
-```az group deployment create --name "eshopvm" --resource-group "eshopworkshop" --template-file "./src/VM/azuredeploy.json"```
+```az deployment group create --name "eshopvm" --resource-group "eshopworkshop_#" --template-file "./src/VM/azuredeploy.json"```
 
 This takes ~15 mins to complete
 
