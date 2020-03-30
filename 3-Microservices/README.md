@@ -11,9 +11,9 @@ The architecture proposes a microservice oriented architecture implementation wi
 
 Create an AKS cluster with 3 nodes.
 
-```az aks create --resource-group eshopworkshop --name eshopaks --node-count 3 --enable-addons monitoring,http_application_routing --generate-ssh-keys```
+```az aks create --resource-group eshopworkshop_# --name eshopaks --node-count 3 --enable-addons monitoring,http_application_routing --generate-ssh-keys```
 
-```az aks get-credentials --resource-group eshopworkshop --name eshopaks```
+```az aks get-credentials --resource-group eshopworkshop_# --name eshopaks```
 
 
 ### Deploy the OneAgent Operator in AKS
@@ -43,7 +43,7 @@ https://www.dynatrace.com/support/help/shortlink/kubernetes-deploy#install-oneag
 
 ```kubectl create namespace eshop```
 
-```./deploy-all.sh --aks-name eshopaks --aks-rg eshopworkshop --tag dev --dns aks --namespace eshop```
+```./deploy-all.sh --aks-name eshopaks --aks-rg eshopworkshop_# --tag dev --dns aks --namespace eshop```
 
 ```kubectl apply -f aks-httpaddon-cfg.yaml```
 
