@@ -43,6 +43,7 @@ This takes ~15 mins to complete
 
 After the VM instance is created, ssh into the VM instance from the **cloud shell** and ensure that the ARM template has completed successfully.
 
+````az vm show -d -g eshopworkshop_# -n eshopvm --query publicIps -o tsv ``\
 ```ssh eshopadmin@[vm-ip-address]```\
 ```tail -f /var/log/cloud-init-output.log ```
 
